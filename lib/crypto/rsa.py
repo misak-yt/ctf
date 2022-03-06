@@ -18,10 +18,10 @@ def lcm(p, q):
 def ex_euqulid(a, b):
     if b == 0:
         return a, 1, 0
-    d, x, y = ex_euqulid(b, a%b)
+    y, x, d = ex_euqulid(b, a%b)
     y -= (a // b) * x
     
-    return d, x, y
+    return x, y, d
 
 # 逆元の計算 ed ≡ 1(mod φ(n))
 def inv_mod(e, d):
@@ -40,6 +40,7 @@ if __name__ == "__main__":
     target = int(input("Enter Number: "))
 
     c = pow(target, e, n)
-    print(c)
 
-    print (pow(c, d, n))
+    print('公開鍵：e = {0}, n = {1}'.format(e, n))
+    print('暗号文：{0}'.format(c))
+    print ('復号化：{0}'.format(pow(c, d, n)))
