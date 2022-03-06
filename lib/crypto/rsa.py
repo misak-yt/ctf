@@ -1,7 +1,6 @@
 import os
 import math
 import fractions
-from Crypto.Util.number import inverse
 
 def is_prime(n):
     if n ==1 or n == 2:
