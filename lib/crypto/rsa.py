@@ -3,10 +3,10 @@ import math
 import fractions
 
 def is_prime(n):
-    if n ==1 or n == 2:
+    if n ==1 or n < 0:
         return False
     else:
-        for i in range(3, math.sqrt(n)):
+        for i in range(2, math.sqrt(n)):
             if n % i == 0:
                 return False
         return True
